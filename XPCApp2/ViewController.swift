@@ -25,3 +25,12 @@ class ViewController: NSViewController {
 
 }
 
+extension ViewController: NSTableViewDataSource, NSTableViewDelegate {
+	func numberOfRows(in tableView: NSTableView) -> Int {
+		return 15
+	}
+
+	func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+		<#code#>
+	}
+}

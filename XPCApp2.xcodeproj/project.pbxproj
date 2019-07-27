@@ -11,6 +11,8 @@
 		335983DC22EB7073000E7FB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983DB22EB7073000E7FB6 /* ViewController.swift */; };
 		335983DE22EB7074000E7FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 335983DD22EB7074000E7FB6 /* Assets.xcassets */; };
 		335983E122EB7074000E7FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335983DF22EB7074000E7FB6 /* Main.storyboard */; };
+		335983EA22EC17B0000E7FB6 /* KittenGetterProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983E922EC17B0000E7FB6 /* KittenGetterProxy.swift */; };
+		335983ED22EC1983000E7FB6 /* DataFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		335983E022EB7074000E7FB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		335983E222EB7074000E7FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		335983E322EB7074000E7FB6 /* XPCApp2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XPCApp2.entitlements; sourceTree = "<group>"; };
+		335983E922EC17B0000E7FB6 /* KittenGetterProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenGetterProxy.swift; sourceTree = "<group>"; };
+		335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 		335983CD22EB7073000E7FB6 = {
 			isa = PBXGroup;
 			children = (
+				335983EB22EC1972000E7FB6 /* Protocols */,
 				335983D822EB7073000E7FB6 /* XPCApp2 */,
 				335983D722EB7073000E7FB6 /* Products */,
 			);
@@ -55,12 +60,21 @@
 			children = (
 				335983D922EB7073000E7FB6 /* AppDelegate.swift */,
 				335983DB22EB7073000E7FB6 /* ViewController.swift */,
+				335983E922EC17B0000E7FB6 /* KittenGetterProxy.swift */,
 				335983DD22EB7074000E7FB6 /* Assets.xcassets */,
 				335983DF22EB7074000E7FB6 /* Main.storyboard */,
 				335983E222EB7074000E7FB6 /* Info.plist */,
 				335983E322EB7074000E7FB6 /* XPCApp2.entitlements */,
 			);
 			path = XPCApp2;
+			sourceTree = "<group>";
+		};
+		335983EB22EC1972000E7FB6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				335983EA22EC17B0000E7FB6 /* KittenGetterProxy.swift in Sources */,
 				335983DC22EB7073000E7FB6 /* ViewController.swift in Sources */,
+				335983ED22EC1983000E7FB6 /* DataFetchProtocol.swift in Sources */,
 				335983DA22EB7073000E7FB6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
