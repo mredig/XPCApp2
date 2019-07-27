@@ -13,7 +13,35 @@
 		335983E122EB7074000E7FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335983DF22EB7074000E7FB6 /* Main.storyboard */; };
 		335983EA22EC17B0000E7FB6 /* KittenGetterProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983E922EC17B0000E7FB6 /* KittenGetterProxy.swift */; };
 		335983ED22EC1983000E7FB6 /* DataFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */; };
+		335983F922EC1C87000E7FB6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983F822EC1C87000E7FB6 /* main.swift */; };
+		335983FD22EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = 335983F222EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3359840222EC1D11000E7FB6 /* DataFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */; };
+		3393D96A22EC1D6F00F82D79 /* DataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393D96922EC1D6F00F82D79 /* DataDownloader.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		335983FB22EC1C87000E7FB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 335983CE22EB7073000E7FB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 335983F122EC1C87000E7FB6;
+			remoteInfo = "XPCApp2-DataDownloader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3359840122EC1C87000E7FB6 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				335983FD22EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		335983D622EB7073000E7FB6 /* XPCApp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XPCApp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +53,21 @@
 		335983E322EB7074000E7FB6 /* XPCApp2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XPCApp2.entitlements; sourceTree = "<group>"; };
 		335983E922EC17B0000E7FB6 /* KittenGetterProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KittenGetterProxy.swift; sourceTree = "<group>"; };
 		335983EC22EC1983000E7FB6 /* DataFetchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchProtocol.swift; sourceTree = "<group>"; };
+		335983F222EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = "XPCApp2-DataDownloader.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		335983F822EC1C87000E7FB6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		335983FA22EC1C87000E7FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3393D96922EC1D6F00F82D79 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		335983D322EB7073000E7FB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335983EF22EC1C87000E7FB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +82,7 @@
 			children = (
 				335983EB22EC1972000E7FB6 /* Protocols */,
 				335983D822EB7073000E7FB6 /* XPCApp2 */,
+				335983F322EC1C87000E7FB6 /* XPCApp2-DataDownloader */,
 				335983D722EB7073000E7FB6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				335983D622EB7073000E7FB6 /* XPCApp2.app */,
+				335983F222EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +118,16 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		335983F322EC1C87000E7FB6 /* XPCApp2-DataDownloader */ = {
+			isa = PBXGroup;
+			children = (
+				335983F822EC1C87000E7FB6 /* main.swift */,
+				3393D96922EC1D6F00F82D79 /* DataDownloader.swift */,
+				335983FA22EC1C87000E7FB6 /* Info.plist */,
+			);
+			path = "XPCApp2-DataDownloader";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -87,15 +138,34 @@
 				335983D222EB7073000E7FB6 /* Sources */,
 				335983D322EB7073000E7FB6 /* Frameworks */,
 				335983D422EB7073000E7FB6 /* Resources */,
+				3359840122EC1C87000E7FB6 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				335983FC22EC1C87000E7FB6 /* PBXTargetDependency */,
 			);
 			name = XPCApp2;
 			productName = XPCApp2;
 			productReference = 335983D622EB7073000E7FB6 /* XPCApp2.app */;
 			productType = "com.apple.product-type.application";
+		};
+		335983F122EC1C87000E7FB6 /* XPCApp2-DataDownloader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 335983FE22EC1C87000E7FB6 /* Build configuration list for PBXNativeTarget "XPCApp2-DataDownloader" */;
+			buildPhases = (
+				335983EE22EC1C87000E7FB6 /* Sources */,
+				335983EF22EC1C87000E7FB6 /* Frameworks */,
+				335983F022EC1C87000E7FB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "XPCApp2-DataDownloader";
+			productName = "XPCApp2-DataDownloader";
+			productReference = 335983F222EC1C87000E7FB6 /* XPCApp2-DataDownloader.xpc */;
+			productType = "com.apple.product-type.xpc-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -108,6 +178,9 @@
 				ORGANIZATIONNAME = "Red_Egg Productions";
 				TargetAttributes = {
 					335983D522EB7073000E7FB6 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					335983F122EC1C87000E7FB6 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
 				};
@@ -126,6 +199,7 @@
 			projectRoot = "";
 			targets = (
 				335983D522EB7073000E7FB6 /* XPCApp2 */,
+				335983F122EC1C87000E7FB6 /* XPCApp2-DataDownloader */,
 			);
 		};
 /* End PBXProject section */
@@ -137,6 +211,13 @@
 			files = (
 				335983DE22EB7074000E7FB6 /* Assets.xcassets in Resources */,
 				335983E122EB7074000E7FB6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		335983F022EC1C87000E7FB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +235,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		335983EE22EC1C87000E7FB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3359840222EC1D11000E7FB6 /* DataFetchProtocol.swift in Sources */,
+				3393D96A22EC1D6F00F82D79 /* DataDownloader.swift in Sources */,
+				335983F922EC1C87000E7FB6 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		335983FC22EC1C87000E7FB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 335983F122EC1C87000E7FB6 /* XPCApp2-DataDownloader */;
+			targetProxy = 335983FB22EC1C87000E7FB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		335983DF22EB7074000E7FB6 /* Main.storyboard */ = {
@@ -321,6 +420,44 @@
 			};
 			name = Release;
 		};
+		335983FF22EC1C87000E7FB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				INFOPLIST_FILE = "XPCApp2-DataDownloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@loader_path",
+					/../../../../Frameworks,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.XPCApp2-DataDownloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3359840022EC1C87000E7FB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				INFOPLIST_FILE = "XPCApp2-DataDownloader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@loader_path",
+					/../../../../Frameworks,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.redeggproductions.XPCApp2-DataDownloader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,6 +475,15 @@
 			buildConfigurations = (
 				335983E722EB7074000E7FB6 /* Debug */,
 				335983E822EB7074000E7FB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		335983FE22EC1C87000E7FB6 /* Build configuration list for PBXNativeTarget "XPCApp2-DataDownloader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				335983FF22EC1C87000E7FB6 /* Debug */,
+				3359840022EC1C87000E7FB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

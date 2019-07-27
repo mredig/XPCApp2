@@ -735,7 +735,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="ZFN-JD-kQ5">
+                                                        <tableCellView identifier="KittenImage" id="ZFN-JD-kQ5">
                                                             <rect key="frame" x="1" y="1" width="475" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -781,6 +781,9 @@
                             <constraint firstAttribute="bottom" secondItem="nf8-Z3-HVB" secondAttribute="bottom" id="sdR-YT-dSH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="AWl-2B-qlf" id="i6G-FJ-FPp"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

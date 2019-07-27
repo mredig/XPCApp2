@@ -8,18 +8,23 @@
 
 import Cocoa
 
+protocol KittenViewable: AnyObject {
+	func kittenLoaded()
+}
+
 class KittenGetterProxy {
 
 	let urls: [URL]
+	var delegate: KittenViewable?
 
 	let remoteDownloadConnection: NSXPCConnection = {
-		let connection = NSXPCConnection(serviceName: "com.redeggproductions.XPCApp2-Downloader")
+		let connection = NSXPCConnection(serviceName: "com.redeggproductions.XPCApp2-DataDownloader")
 		connection.remoteObjectInterface = NSXPCInterface(with: DataFetchProtocol.self)
 		connection.resume()
 		return connection
 	}()
 
-	var cachedKittens = [Int: NSImage]()
+	var kittens = [NSImage]()
 
 
 	init() {
@@ -28,28 +33,29 @@ class KittenGetterProxy {
 								.compactMap { $0 }
 								.map { $0.appendingPathComponent("\(Int.random(in: 300...500))")
 										 .appendingPathComponent("\(Int.random(in: 300...500))")}
-	}
 
-	func fetchKitten(at index: Int, completion: @escaping (NSImage?) -> Void) {
-		if let image = cachedKittens[index] {
-			completion(image)
-			return
+		for index in 0..<urls.count {
+			fetchKitten(at: index)
 		}
 
+	}
+
+	func fetchKitten(at index: Int) {
 		guard let downloader = remoteDownloadConnection.remoteObjectProxyWithErrorHandler({ error in
 			NSLog("remote proxy error: \(error)")
 		}) as? DataFetchProtocol else { return }
 
-		for url in urls {
-			downloader.downloadData(at: url) { imageData in
-				guard let imageData = imageData, let image = NSImage(data: imageData) else {
-					completion(nil)
-					print("failed download")
-					return
-				}
-				print("got \(imageData.count) bytes")
-				completion(image)
+		let url = urls[index]
+
+		downloader.downloadData(at: url) { imageData in
+			guard let imageData = imageData, let image = NSImage(data: imageData) else {
+				print("failed download \(url)")
+				return
 			}
+			print("got \(imageData.count) bytes")
+
+			self.kittens.append(image)
+			self.delegate?.kittenLoaded()
 		}
 	}
 }
