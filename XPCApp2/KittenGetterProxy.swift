@@ -14,7 +14,7 @@ protocol KittenViewable: AnyObject {
 
 class KittenGetterProxy {
 
-	let urls: [URL]
+	var urls: [URL] = []
 	var delegate: KittenViewable?
 
 	let remoteDownloadConnection: NSXPCConnection = {
@@ -26,18 +26,27 @@ class KittenGetterProxy {
 
 	var kittens = [NSImage]()
 
+	var timer: Timer?
+
 
 	init() {
-		let random = Int.random(in: 10...20)
-		self.urls = (1...random).map { _ in URL(string: "https://placekitten.com/") }
-								.compactMap { $0 }
-								.map { $0.appendingPathComponent("\(Int.random(in: 300...500))")
-										 .appendingPathComponent("\(Int.random(in: 300...500))")}
 
-		for index in 0..<urls.count {
-			fetchKitten(at: index)
-		}
+		timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true, block: { _ in
+			self.getANewKitten()
+		})
 
+	}
+
+	func getANewKitten() {
+		urls.append(randomKittenURL())
+		fetchKitten(at: urls.count - 1)
+	}
+
+	func randomKittenURL() -> URL {
+		let url = URL(string: "https://placekitten.com/")!
+		return url
+			.appendingPathComponent("\(Int.random(in: 300...500))")
+			.appendingPathComponent("\(Int.random(in: 300...500))")
 	}
 
 	func fetchKitten(at index: Int) {

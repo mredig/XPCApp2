@@ -57,6 +57,7 @@
 		335983F822EC1C87000E7FB6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		335983FA22EC1C87000E7FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3393D96922EC1D6F00F82D79 /* DataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDownloader.swift; sourceTree = "<group>"; };
+		3393D96B22ECCEB300F82D79 /* XPCApp2-DataDownloader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "XPCApp2-DataDownloader.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +122,7 @@
 		335983F322EC1C87000E7FB6 /* XPCApp2-DataDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				3393D96B22ECCEB300F82D79 /* XPCApp2-DataDownloader.entitlements */,
 				335983F822EC1C87000E7FB6 /* main.swift */,
 				3393D96922EC1D6F00F82D79 /* DataDownloader.swift */,
 				335983FA22EC1C87000E7FB6 /* Info.plist */,
@@ -179,9 +181,22 @@
 				TargetAttributes = {
 					335983D522EB7073000E7FB6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 					335983F122EC1C87000E7FB6 = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -390,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCApp2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XPCApp2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -423,9 +440,11 @@
 		335983FF22EC1C87000E7FB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "XPCApp2-DataDownloader/XPCApp2-DataDownloader.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "XPCApp2-DataDownloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path",
@@ -442,9 +461,11 @@
 		3359840022EC1C87000E7FB6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "XPCApp2-DataDownloader/XPCApp2-DataDownloader.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L5UZAT7KA9;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "XPCApp2-DataDownloader/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path",
